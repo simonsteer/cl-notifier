@@ -19,9 +19,11 @@ Some notes:
 
 - Default CLI arguments are set up to search for general items for sale in Toronto every 45 minutes. You can easily change the defaults in `index.js` so you don't have to pass any CLI arguments if you wish.
 
-[node-craigslist docs](https://www.npmjs.com/package/node-craigslist)
+[node-craigslist docs if you want to get more granular with your search](https://www.npmjs.com/package/node-craigslist)
 
-[nodemailer docs](https://nodemailer.com/about/)
+[nodemailer docs for troubleshooting email issues](https://nodemailer.com/about/)
+
+[moment docs for durations](https://momentjs.com/docs/#/durations/creating/)
 
 ### Example commands
 
