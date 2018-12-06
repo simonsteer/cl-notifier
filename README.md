@@ -25,6 +25,7 @@ Some notes:
 - Desktop notifications are sent by default when an error occurs, and when an email is successfully sent to your inbox. You can opt out of the notifs by commenting out or deleting the `notifier.notify` lines in `utils.js`. Errors are logged in `errorLogs.txt`
 
 [node-craigslist docs](https://www.npmjs.com/package/node-craigslist)
+
 [nodemailer docs](https://nodemailer.com/about/)
 
 ### Example commands
