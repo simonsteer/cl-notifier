@@ -9,7 +9,7 @@ Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° 
 3. Edit configs in `utils.js` when instantiating nodemail transporter and when using said transporter to send an email
    - If using gmail as your client, configure your account to allow less secure apps by going [here](https://myaccount.google.com/lesssecureapps) (if you don't do this you won't be able to send yourself emails using nodemailer)
 4. Run `node index.js` in your terminal
-   - CLI arguments are as follows `node index.js MINIMUM_PRICE MAXIMUM_PRICE SEARCH_QUERY`
+   - Optionally run with the following arguments `node index.js MINIMUM_PRICE MAXIMUM_PRICE SEARCH_QUERY`
 5. Do whatever you want while Node looks for stuff on Craigslist for you
 
 Defaults have been set to search for apartments in Toronto. This can easily be changed by modifying `clientOptions` and `searchOptions` in `index.js`.
