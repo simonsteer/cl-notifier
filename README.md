@@ -19,12 +19,6 @@ Some notes:
 
 - Default CLI arguments are set up to search for general items for sale in Toronto every 45 minutes. You can easily change the defaults in `index.js` so you don't have to pass any CLI arguments if you wish.
 
-[node-craigslist docs if you want to get more granular with your search](https://www.npmjs.com/package/node-craigslist)
-
-[nodemailer docs for troubleshooting email issues](https://nodemailer.com/about/)
-
-[moment docs for durations](https://momentjs.com/docs/#/durations/creating/)
-
 ### Example commands
 
 Search for unfurnished apartments in Toronto for \$1000 - \$1500/mo every 45 minutes:
@@ -44,3 +38,11 @@ Search for mid-century modern furniture in Vancouver for \$1000 or less every 20
 ```
 node index.js vancouver fua 0 1000 'mcm mid century modern' 20 minutes
 ```
+
+### Dependency docs for troubleshooting, etc
+
+[node-craigslist docs if you want to get more granular with your search](https://www.npmjs.com/package/node-craigslist)
+
+[nodemailer docs for troubleshooting email issues](https://nodemailer.com/about/)
+
+[moment docs for durations](https://momentjs.com/docs/#/durations/creating/)
