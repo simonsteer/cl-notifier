@@ -18,7 +18,7 @@ const searchOptions = {
 
 const runSearch = () =>
   client.search(searchOptions, searchQuery, async (error, results) => {
-    const timer = moment.duration(15, 'minutes').timer(runSearch)
+    const timer = moment.duration(45, 'minutes').timer(runSearch)
 
     if (error) {
       writeToErrorLogs(error, 'an error occured when querying craigslist')
@@ -26,22 +26,18 @@ const runSearch = () =>
       return
     }
 
-    const resultsFromToronto = results.filter(
-      ({ url, hasPic }) => url.includes('/tor/') && hasPic
-    )
-
     const latestStoredResult = fs.readFileSync(
       './latestResultStored.txt',
       'utf-8'
     )
 
-    const indexOfLastResultStored = resultsFromToronto.findIndex(
+    const indexOfLastResultStored = results.findIndex(
       ({ url }) => url === latestStoredResult
     )
 
     const shouldSendEmail = indexOfLastResultStored !== 0
     if (shouldSendEmail) {
-      const newPostings = resultsFromToronto.slice(0, indexOfLastResultStored)
+      const newPostings = results.slice(0, indexOfLastResultStored)
       const urls = newPostings.reduce((acc, { url }) => {
         return acc.concat(`\n${url}`)
       }, '')
