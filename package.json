@@ -1,7 +1,7 @@
 {
   "name": "cl-notifier",
   "version": "1.0.0",
-  "description": "## Automate boring Craigslist page refreshes",
+  "description": "Automate boring Craigslist page refreshes",
   "main": "index.js",
   "dependencies": {
     "moment": "^2.22.2",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/simonsteer/cl-notifier.git"
   },
-  "author": "",
+  "author": "Simon Steer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/simonsteer/cl-notifier/issues"
