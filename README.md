@@ -38,11 +38,11 @@ node index.js toronto apa 1000 1500 -furnished 45 minutes
 Search for keyboards in Chicago for \$500 or less every three hours and opt out of desktop notifs:
 
 ```
-chicago sss 0 500 keyboard 3 hours no-notify
+node index.js chicago sss 0 500 keyboard 3 hours no-notify
 ```
 
 Search for mid-century modern furniture in Vancouver for \$1000 or less every 20 minutes:
 
 ```
-vancouver fua 0 1000 'mcm mid century modern' 20 minutes
+node index.js vancouver fua 0 1000 'mcm mid century modern' 20 minutes
 ```
