@@ -8,7 +8,7 @@ Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° 
 2. Run `npm install`
 3. Edit `user`, `pass`, `to`, and `from` in `utils.js`
    - If using gmail as your client, configure your account to allow less secure apps by going [here](https://myaccount.google.com/lesssecureapps) (if you don't do this you won't be able to send yourself emails using nodemailer)
-4. Run `node index.js` in your terminal with the following arguments `CITY CATEGORY MIN_PRICE MAX_PRICE SEARCH_QUERY DURATION_AMOUNT DURATION_UNIT`
+4. Run `node index.js` in your terminal with the following arguments `CITY CATEGORY MIN_PRICE MAX_PRICE SEARCH_QUERY INTERVAL_DURATION INTERVAL_UNIT`
    - You can also add `no-notify` as a final argument if you don't want desktop notifications
    - Scroll down to see some example commands
 5. Do whatever you want while Node looks for stuff on Craigslist for you
