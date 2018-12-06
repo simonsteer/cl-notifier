@@ -6,7 +6,7 @@ Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° 
 
 1. Clone this repository
 2. Run `npm install`
-3. Edit configs in `utils.js` when instantiating nodemail transporter and when using said transporter to send an email
+3. Edit `user`, `pass`, `to`, and `from` in `utils.js`
    - If using gmail as your client, configure your account to allow less secure apps by going [here](https://myaccount.google.com/lesssecureapps) (if you don't do this you won't be able to send yourself emails using nodemailer)
 4. Run `node index.js` in your terminal
    - Optionally run with the following arguments `node index.js MINIMUM_PRICE MAXIMUM_PRICE SEARCH_QUERY`
