@@ -1,4 +1,4 @@
-# craigslist-notifier
+# cl-notifier
 
 ### automate boring craigslist page refreshes
 
