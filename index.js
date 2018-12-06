@@ -5,10 +5,13 @@ const moment = require('moment')
 require('moment-timer')
 const { sendEmail, writeToErrorLogs } = require('./utils')
 
-const clientOptions = { city: 'toronto', host: 'craigslist.ca' }
+const clientOptions = {
+  city: 'toronto',
+  host: 'craigslist.ca',
+}
 const client = new craigslist.Client(clientOptions)
 
-const [, , minAsk = 0, maxAsk = 9999, searchQuery = ''] = process.argv
+const [, , minAsk = 0, maxAsk = 99999, searchQuery = ''] = process.argv
 
 const searchOptions = {
   category: 'apa',
@@ -26,20 +29,20 @@ const runSearch = () =>
       return
     }
 
-    const latestStoredResult = fs.readFileSync(
+    const lastestResultStored = fs.readFileSync(
       './latestResultStored.txt',
       'utf-8'
     )
 
-    const indexOfLastResultStored = results.findIndex(
-      ({ url }) => url === latestStoredResult
+    const indexOfLatestResultStored = results.findIndex(
+      ({ url }) => url === lastestResultStored
     )
 
-    const shouldSendEmail = indexOfLastResultStored !== 0
+    const shouldSendEmail = indexOfLatestResultStored !== 0
     if (shouldSendEmail) {
-      const newPostings = results.slice(0, indexOfLastResultStored)
+      const newPostings = results.slice(0, indexOfLatestResultStored)
       const urls = newPostings.reduce((acc, { url }) => {
-        return acc.concat(`\n${url}`)
+        return acc.concat(`${url}\n`)
       }, '')
 
       sendEmail(urls)
