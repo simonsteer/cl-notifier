@@ -5,26 +5,40 @@ const moment = require('moment')
 require('moment-timer')
 const { sendEmail, writeToErrorLogs } = require('./utils')
 
-const clientOptions = {
-  city: 'toronto',
-  host: 'craigslist.ca',
-}
+const [
+  ,
+  ,
+  city = 'toronto',
+  category = 'sss',
+  minAsk = 0,
+  maxAsk = 99999,
+  searchQuery = '',
+  intervalDuration = 45,
+  intervalUnit = 'minutes',
+  shouldNotify = true,
+] = process.argv
+
+const clientOptions = { city }
 const client = new craigslist.Client(clientOptions)
 
-const [, , minAsk = 0, maxAsk = 99999, searchQuery = ''] = process.argv
-
 const searchOptions = {
-  category: 'apa',
+  category,
   minAsk: Number(minAsk),
   maxAsk: Number(maxAsk),
 }
 
 const runSearch = () =>
-  client.search(searchOptions, searchQuery, async (error, results) => {
-    const timer = moment.duration(45, 'minutes').timer(runSearch)
+  client.search(searchOptions, searchQuery, (error, results) => {
+    const timer = moment
+      .duration(Number(intervalDuration), intervalUnit)
+      .timer(runSearch)
 
     if (error) {
-      writeToErrorLogs(error, 'an error occured when querying craigslist')
+      writeToErrorLogs(
+        error,
+        'an error occured when querying craigslist',
+        shouldNotify
+      )
       timer.start()
       return
     }
@@ -45,9 +59,11 @@ const runSearch = () =>
         return acc.concat(`${url}\n`)
       }, '')
 
-      sendEmail(urls)
+      sendEmail(urls, shouldNotify)
     } else {
-      console.log('stored result is identical to last result - no email sent')
+      console.log(
+        'latst result sent matches latest result queried - no email sent'
+      )
     }
 
     timer.start()
