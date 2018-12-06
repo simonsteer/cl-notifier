@@ -21,8 +21,6 @@ Some notes:
 
 - Default CLI arguments are set up to search for general items for sale in Toronto every 45 minutes. You can easily change the defaults in `index.js` so you don't have to pass any CLI arguments if you wish.
 
-- Desktop notifications are sent by default when an error occurs, and when an email is successfully sent to your inbox. You can opt out of the notifs by commenting out or deleting the `notifier.notify` lines in `utils.js`. Errors are logged in `errorLogs.txt`
-
 [node-craigslist docs](https://www.npmjs.com/package/node-craigslist)
 
 [nodemailer docs](https://nodemailer.com/about/)
