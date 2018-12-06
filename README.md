@@ -1,6 +1,6 @@
 # cl-notifier
 
-### Automate boring Craigslist page refreshes
+## Automate boring Craigslist page refreshes
 
 Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° ͜ʖ ͡°)
 
@@ -18,7 +18,7 @@ Some notes:
 
 - The very first time you run `node index.js` you'll get emailed a giant list of results. Whenever `runSearch` gets called again it will only attempt to email you new listings.
 
-- Defaults have been set to search for apartments in Toronto. This can easily be changed by modifying `clientOptions` and `searchOptions` in `index.js`.
+- Default CLI arguments are set up to search for general items for sale in Toronto every 45 minutes. You can easily change the defaults in `index.js` so you don't have to pass any CLI arguments if you wish.
 
 - Search happens every 45 minutes. You can change this by modifying `timer` at the top of the `runSearch` function. Don't query too often or your IP address will get blocked.
 
@@ -26,7 +26,7 @@ Some notes:
 
 [node-craigslist docs for more on craigslist query customization](https://www.npmjs.com/package/node-craigslist)
 
-## Example commands
+### Example commands
 
 Search for unfurnished apartments in Toronto for \$1000 - \$1500/mo every 45 minutes:
 
