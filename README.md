@@ -13,11 +13,9 @@ Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° 
    - Scroll down to see some example commands
 5. Do whatever you want while Node looks for stuff on Craigslist for you
 
-The very first time you run `node index.js` you'll get emailed a giant list of results. Subsequent searches will only attempt to email you new listings.
-
 Some notes:
 
-- The very first time you run `node index.js` you'll get emailed a giant list of results. Whenever `runSearch` gets called again it will only attempt to email you new listings.
+- The very first time you run `node index.js` you'll get emailed a giant list of results. Subsequent searches will only attempt to email you new listings.
 
 - Default CLI arguments are set up to search for general items for sale in Toronto every 45 minutes. You can easily change the defaults in `index.js` so you don't have to pass any CLI arguments if you wish.
 
