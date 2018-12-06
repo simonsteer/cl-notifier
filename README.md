@@ -12,6 +12,8 @@ Searching for stuff on Craigslist sucks; why not let Node do it for you? ( ͡° 
    - Optionally run with the following arguments `node index.js MINIMUM_PRICE MAXIMUM_PRICE SEARCH_QUERY`
 5. Do whatever you want while Node looks for stuff on Craigslist for you
 
+On first run you'll get emailed a giant list of urls from the search results, on subsequent runs you'll only get sent new listings.
+
 Defaults have been set to search for apartments in Toronto. This can easily be changed by modifying `clientOptions` and `searchOptions` in `index.js`.
 
 Search happens every 45 minutes. You can change this by modifying `timer` at the top of the `runSearch` function. Don't query too often or your IP address will get blocked.
